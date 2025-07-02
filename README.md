@@ -1,12 +1,91 @@
-# React + Vite
+# ♻️ DevSpark — Plastic Packaging Impact Analyzer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Scan. Search. Understand.  
+A web app that empowers users to **scan barcodes of daily products** and instantly learn about the **environmental impact of their plastic packaging**.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌟 Features
 
-## Expanding the ESLint configuration
+- 📷 **Live Barcode Scanning** (EAN-13, UPC-A, Code128, QR)
+- 🔍 **Search by Product Name or Code**
+- 🧠 **Loaded Impact Data** for brands
+- 🌱 **Eco Score & Trust Score** for awareness
+- 🎨 Light/Dark Mode toggle
+- 🛠 Built with **React + Vite + Tailwind CSS**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📦 How It Works
+
+1. **User scans barcode** via device camera
+2. App compares it with a product database
+3. If found: shows eco score, impact summary, and trust info
+4. If not: displays `"Sorry, product not found"` gracefully
+
+---
+
+
+## 🚀 Getting Started
+
+```bash
+git clone https://github.com/nitish0009/DevSpark.git
+cd DevSpark/client
+npm install
+npm run dev
+```
+
+---
+
+## 📝 To Do / Future Enhancements
+
+- 🔊 **Add success beep / vibration** on barcode scan
+- 🧪 **Integrate camera switch** (front ↔ back)
+- 📂 **Support scan history** (recent products scanned)
+- 🌍 **Connect to real-time plastic database API**
+- 💬 **Add product feedback or rating option**
+- 🧭 **Show plastic reduction tips** per product
+- 📱 **Make it PWA** (installable web app)
+- 🧪 Add **unit tests** and accessibility improvements
+- 🛡️ **Barcode scan timeout** fallback + retry button
+- 🔐 Optional: **User login and cloud scan storage**
+
+---
+
+## 🛠 Tech Stack
+
+| Tech              | Purpose                     |
+|-------------------|-----------------------------|
+| **React**         | Frontend framework          |
+| **Vite**          | Fast dev server + build     |
+| **Tailwind CSS**  | Styling (utility-first)     |
+| **html5-qrcode**  | Camera + barcode scanner    |
+| **React Router**  | Client-side routing         |
+
+---
+
+## 📁 Folder Structure
+
+```
+src/
+├── components/
+│   ├── Html5Scanner.jsx
+│   ├── Navbar.jsx
+│   ├── Footer.jsx
+│   └── ResultCard.jsx
+├── pages/
+│   ├── Home.jsx
+│   ├── ProductPage.jsx
+│   └── About.jsx
+├── data/
+│   └── products.js
+└── App.jsx
+```
+
+---
+
+## 🤝 Team & Credits
+
+Built during **Microsoft Hackathon 2025** by the **DevSpark Team**  
+
+---
+
