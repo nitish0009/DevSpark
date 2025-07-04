@@ -16,24 +16,24 @@ export default function Home() {
     localStorage.setItem("theme", dark ? "dark" : "light");
   }, [dark]);
 
-  // Filter products based on search
   const filteredProducts = products.filter((p) =>
     p.name.toLowerCase().includes(searchValue.toLowerCase())
   );
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 px-4 py-6 font-sans">
-      {/* Dark Mode Toggle */}
-      <div className="flex justify-end max-w-6xl mx-auto mb-2">
+      {/* Navbar on top */}
+      <Navbar />
+
+      {/* Dark Mode Toggle BELOW Navbar */}
+      <div className="flex justify-end max-w-6xl mx-auto mt-2 mb-6">
         <button
           onClick={() => setDark(!dark)}
-          className="bg-gray-200 dark:bg-gray-700 text-sm px-4 py-1 rounded-full"
+          className="bg-gray-200 dark:bg-gray-700 text-sm px-4 py-2 rounded-full text-gray-800 dark:text-white"
         >
           {dark ? "☀ Light Mode" : "🌙 Dark Mode"}
         </button>
       </div>
-
-      <Navbar />
 
       {/* Title */}
       <div className="text-center max-w-2xl mx-auto mb-6">
@@ -46,12 +46,12 @@ export default function Home() {
       </div>
 
       <SearchBar
-  searchValue={searchValue}
-  setSearchValue={setSearchValue}
-  triggerScanner={() => setShowScanner(true)} // 🔗 scanner logic lives here
-/>
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+        triggerScanner={() => setShowScanner(true)}
+      />
 
-      {/* Result Grid */}
+      {/* Results */}
       <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((p) => <ResultCard key={p.id} product={p} />)
@@ -64,7 +64,7 @@ export default function Home() {
 
       <Footer />
 
-      {/* Barcode Scanner Modal */}
+      {/* Scanner */}
       {showScanner && <Html5Scanner onClose={() => setShowScanner(false)} />}
     </div>
   );
